@@ -1,107 +1,109 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Listado de productos de atletismo con filtros y ordenación." />
-    <title>Productos · AtletismoShop</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Listado de productos de running con filtros, favoritos y carrito visual." />
+  <title>Productos · AtletismoShop</title>
 </head>
 
 <body>
-    <input class="theme-toggle__checkbox" type="checkbox" id="theme" aria-label="Cambiar tema" />
+  <div class="page">
+    <header class="header">
+      <div class="header__inner">
+        <a class="brand" href="./index.html" aria-label="Ir a inicio">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__name">AtletismoShop</span>
+            <span class="brand__tag">Catálogo</span>
+          </span>
+        </a>
 
-    <div class="page">
-        <header class="header">
-            <div class="header__inner">
-                <a class="brand" href="./index.html" aria-label="Ir a inicio">
-                    <span class="brand__mark" aria-hidden="true"></span>
-                    <span class="brand__text">
-                        <span class="brand__name">AtletismoShop</span>
-                        <span class="brand__tag">Catálogo</span>
-                    </span>
-                </a>
+        <nav class="nav" aria-label="Navegación principal">
+          <a class="nav__link" href="./index.html">Inicio</a>
+          <a class="nav__link nav__link--active" href="./products.html">Productos</a>
 
-                <nav class="nav" aria-label="Navegación principal">
-                    <a class="nav__link" href="./index.html">Inicio</a>
-                    <a class="nav__link nav__link--active" href="./products.html">Productos</a>
-                    <a class="nav__link" href="./cart.html">
-                        Carrito <span class="badge" data-cart-badge>0</span>
-                    </a>
-                    <a class="nav__link" href="./contact.html">Contacto</a>
+          <a class="nav__link" href="./cart.html">
+            Carrito <span class="badge" data-cart-badge>0</span>
+          </a>
 
-                    <label class="theme-toggle" for="theme">
-                        <span class="theme-toggle__btn">
-                            <span class="theme-toggle__dot" aria-hidden="true"></span>
-                            <span class="theme-toggle__label">Tema</span>
-                        </span>
-                    </label>
-                </nav>
+          <span class="nav__link" style="padding:10px 12px;">
+            ❤ <span class="badge" data-fav-badge>0</span>
+          </span>
+
+          <a class="nav__link" href="./contact.html">Contacto</a>
+
+          <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambiar tema">Tema</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__inner">
+
+        <div class="breadcrumbs">
+          <a class="breadcrumbs__link" href="./index.html">Inicio</a>
+          <span class="breadcrumbs__sep">›</span>
+          <span class="breadcrumbs__current">Productos</span>
+        </div>
+
+        <section class="section">
+          <div class="section__head">
+            <div>
+              <h1 class="section__title">Catálogo</h1>
+              <p class="section__hint">Busca, filtra, guarda favoritos y añade al carrito.</p>
             </div>
-        </header>
+          </div>
 
-        <main class="main">
-            <div class="main__inner">
-
-                <div class="breadcrumbs">
-                    <a class="breadcrumbs__link" href="./index.html">Inicio</a>
-                    <span class="breadcrumbs__sep">›</span>
-                    <span class="breadcrumbs__current">Productos</span>
-                </div>
-
-                <section class="section">
-                    <div class="section__head">
-                        <div>
-                            <h1 class="section__title">Listado de productos</h1>
-                            <p class="section__hint">Filtra, ordena y entra al detalle como en cualquier e-commerce
-                                serio.</p>
-                        </div>
-                    </div>
-
-                    <div class="filters" aria-label="Filtros del catálogo">
-                        <div class="filters__group">
-                            <label class="filters__label" for="q">Buscar</label>
-                            <input class="input" id="q" type="search" placeholder="Zapatillas, reloj, cinturón..."
-                                data-filter-q />
-                        </div>
-
-                        <div class="filters__group">
-                            <label class="filters__label" for="cat">Categoría</label>
-                            <select class="select" id="cat" data-filter-cat>
-                                <option value="all">Todas</option>
-                                <option value="zapatillas">Zapatillas</option>
-                                <option value="ropa">Ropa</option>
-                                <option value="tecnologia">Tecnología</option>
-                                <option value="accesorios">Accesorios</option>
-                            </select>
-                        </div>
-
-                        <div class="filters__group">
-                            <label class="filters__label" for="sort">Orden</label>
-                            <select class="select" id="sort" data-filter-sort>
-                                <option value="featured">Destacados</option>
-                                <option value="price-asc">Precio ↑</option>
-                                <option value="price-desc">Precio ↓</option>
-                                <option value="name-asc">Nombre A–Z</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid--products" data-products-grid></div>
-                </section>
-
+          <div class="filters" aria-label="Filtros del catálogo">
+            <div class="filters__group">
+              <label class="filters__label" for="q">Buscar</label>
+              <input class="input" id="q" type="search" placeholder="Zapatillas, reloj, cinturón..." data-filter-q />
             </div>
-        </main>
 
-        <footer class="footer">
-            <div class="footer__inner">
-                <span>© 2026 AtletismoShop</span>
-                <span class="footer__muted">Catálogo · filtros · detalle</span>
+            <div class="filters__group">
+              <label class="filters__label" for="cat">Categoría</label>
+              <select class="select" id="cat" data-filter-cat>
+                <option value="all">Todas</option>
+                <option value="zapatillas">Zapatillas</option>
+                <option value="ropa">Ropa</option>
+                <option value="tecnologia">Tecnología</option>
+                <option value="accesorios">Accesorios</option>
+              </select>
             </div>
-        </footer>
-    </div>
 
-    <script type="module" src="./src/js/main.js"></script>
+            <div class="filters__group">
+              <label class="filters__label" for="sort">Orden</label>
+              <select class="select" id="sort" data-filter-sort>
+                <option value="featured">Destacados</option>
+                <option value="price-asc">Precio ↑</option>
+                <option value="price-desc">Precio ↓</option>
+                <option value="name-asc">Nombre A–Z</option>
+              </select>
+            </div>
+
+            <label class="check" for="favs">
+              <input class="check__box" id="favs" type="checkbox" data-filter-favs />
+              Solo favoritos
+            </label>
+          </div>
+
+          <div class="grid grid--products" data-products-grid></div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span>© 2026 AtletismoShop</span>
+        <span class="footer__muted">Running store</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" data-toast aria-live="polite"></div>
+
+  <script type="module" src="./src/js/main.js"></script>
 </body>
-
 </html>

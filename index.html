@@ -1,164 +1,141 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description"
-        content="E-commerce de artículos de atletismo: catálogo, detalle, carrito visual y contacto." />
-    <title>AtletismoShop · E-commerce de atletismo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="E-commerce de artículos de atletismo: catálogo, detalle, carrito visual y contacto." />
+  <title>AtletismoShop · Running store</title>
 </head>
 
 <body>
-    <!-- Toggle tema SOLO CSS -->
-    <input class="theme-toggle__checkbox" type="checkbox" id="theme" aria-label="Cambiar tema" />
+  <div class="page">
+    <header class="header">
+      <div class="header__inner">
+        <a class="brand" href="./index.html" aria-label="Ir a inicio">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__name">AtletismoShop</span>
+            <span class="brand__tag">Running · Ropa · Tecnología</span>
+          </span>
+        </a>
 
-    <div class="page">
-        <header class="header">
-            <div class="header__inner">
-                <a class="brand" href="./index.html" aria-label="Ir a inicio">
-                    <span class="brand__mark" aria-hidden="true"></span>
-                    <span class="brand__text">
-                        <span class="brand__name">AtletismoShop</span>
-                        <span class="brand__tag">Running · Ropa · Tecnología</span>
-                    </span>
-                </a>
+        <nav class="nav" aria-label="Navegación principal">
+          <a class="nav__link nav__link--active" href="./index.html">Inicio</a>
+          <a class="nav__link" href="./products.html">Productos</a>
 
-                <nav class="nav" aria-label="Navegación principal">
-                    <a class="nav__link nav__link--active" href="./index.html">Inicio</a>
-                    <a class="nav__link" href="./products.html">Productos</a>
-                    <a class="nav__link" href="./cart.html">
-                        Carrito <span class="badge" data-cart-badge>0</span>
-                    </a>
-                    <a class="nav__link" href="./contact.html">Contacto</a>
+          <a class="nav__link" href="./cart.html">
+            Carrito <span class="badge" data-cart-badge>0</span>
+          </a>
 
-                    <label class="theme-toggle" for="theme" title="Modo oscuro / claro (solo CSS)">
-                        <span class="theme-toggle__btn">
-                            <span class="theme-toggle__dot" aria-hidden="true"></span>
-                            <span class="theme-toggle__label">Tema</span>
-                        </span>
-                    </label>
-                </nav>
+          <span class="nav__link" style="padding:10px 12px;">
+            ❤ <span class="badge" data-fav-badge>0</span>
+          </span>
+
+          <a class="nav__link" href="./contact.html">Contacto</a>
+
+          <!-- Botón tema (persistente) -->
+          <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambiar tema">
+            Tema
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__inner">
+
+        <section class="hero" aria-label="Portada">
+          <div class="hero__copy">
+            <p class="hero__kicker">Running store</p>
+            <h1 class="hero__title">Compra como una tienda real.</h1>
+            <p class="hero__text">
+              Catálogo con filtros, detalle de producto, favoritos, carrito persistente y carrusel funcional.
+              Interfaz limpia, responsive y con modo claro/oscuro.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="./products.html">Ver catálogo</a>
             </div>
-        </header>
+          </div>
 
-        <main class="main">
-            <div class="main__inner">
+          <div class="hero__media">
+            <div class="carousel" data-carousel aria-label="Carrusel promocional">
+              <div class="carousel__track" data-carousel-track>
+                <article class="carousel__slide" data-carousel-slide
+                  style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1800&q=80')">
+                  <div class="carousel__overlay"></div>
+                  <div class="carousel__content">
+                    <p class="carousel__tag">Zapatillas</p>
+                    <h2 class="carousel__title">Respuesta y estabilidad</h2>
+                    <p class="carousel__subtitle">Para entrenos serios y días rápidos.</p>
+                    <a class="btn btn--primary btn--sm" href="./products.html">Ver catálogo</a>
+                  </div>
+                </article>
 
-                <section class="hero" aria-label="Portada">
-                    <div class="hero__copy">
-                        <p class="hero__kicker">E-commerce de atletismo</p>
-                        <h1 class="hero__title">Compra como una tienda real. Sin “pintar” nada.</h1>
-                        <p class="hero__text">
-                            Catálogo con filtros, detalle de producto, carrito visual persistente, carrusel funcional y
-                            modo oscuro
-                            <strong>solo con CSS</strong>. Maquetación con Grid y SCSS por parciales con BEM estricto.
-                        </p>
+                <article class="carousel__slide" data-carousel-slide
+                  style="background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=80')">
+                  <div class="carousel__overlay"></div>
+                  <div class="carousel__content">
+                    <p class="carousel__tag">Tecnología</p>
+                    <h2 class="carousel__title">Métricas claras</h2>
+                    <p class="carousel__subtitle">Control real de ritmo y progreso.</p>
+                    <a class="btn btn--primary btn--sm" href="./products.html">Ver catálogo</a>
+                  </div>
+                </article>
 
-                        <div class="hero__actions">
-                            <a class="btn btn--primary" href="./products.html">Ver catálogo</a>
-                            <a class="btn btn--ghost" href="./contact.html">Info del proyecto</a>
-                        </div>
+                <article class="carousel__slide" data-carousel-slide
+                  style="background-image:url('https://images.unsplash.com/photo-1526401485004-2aa7f3c23642?auto=format&fit=crop&w=1800&q=80')">
+                  <div class="carousel__overlay"></div>
+                  <div class="carousel__content">
+                    <p class="carousel__tag">Ropa técnica</p>
+                    <h2 class="carousel__title">Cero rozaduras</h2>
+                    <p class="carousel__subtitle">Ligera, transpirable y cómoda.</p>
+                    <a class="btn btn--primary btn--sm" href="./products.html">Ver catálogo</a>
+                  </div>
+                </article>
+              </div>
 
-                        <div class="kpis" aria-label="Indicadores">
-                            <div class="kpi">
-                                <div class="kpi__num">Grid</div>
-                                <div class="kpi__label">Layout profesional</div>
-                            </div>
-                            <div class="kpi">
-                                <div class="kpi__num">BEM</div>
-                                <div class="kpi__label">Escalable</div>
-                            </div>
-                            <div class="kpi">
-                                <div class="kpi__num">SCSS</div>
-                                <div class="kpi__label">Parciales</div>
-                            </div>
-                        </div>
-                    </div>
+              <div class="carousel__controls">
+                <div class="carousel__buttons">
+                  <button class="icon-btn" type="button" data-carousel-prev aria-label="Anterior">←</button>
+                  <button class="icon-btn" type="button" data-carousel-next aria-label="Siguiente">→</button>
+                </div>
 
-                    <div class="hero__media">
-                        <div class="carousel" data-carousel aria-label="Carrusel promocional">
-                            <div class="carousel__track" data-carousel-track>
-                                <article class="carousel__slide" data-carousel-slide
-                                    style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1800&q=80')">
-                                    <div class="carousel__overlay"></div>
-                                    <div class="carousel__content">
-                                        <p class="carousel__tag">Zapatillas</p>
-                                        <h2 class="carousel__title">Respuesta y estabilidad</h2>
-                                        <p class="carousel__subtitle">Para entrenos serios y días rápidos.</p>
-                                        <a class="btn btn--primary btn--sm" href="./products.html">Ir a productos</a>
-                                    </div>
-                                </article>
-
-                                <article class="carousel__slide" data-carousel-slide
-                                    style="background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=80')">
-                                    <div class="carousel__overlay"></div>
-                                    <div class="carousel__content">
-                                        <p class="carousel__tag">Tecnología</p>
-                                        <h2 class="carousel__title">Métricas claras</h2>
-                                        <p class="carousel__subtitle">Control real de ritmo, carga y progreso.</p>
-                                        <a class="btn btn--primary btn--sm" href="./products.html">Ver catálogo</a>
-                                    </div>
-                                </article>
-
-                                <article class="carousel__slide" data-carousel-slide
-                                    style="background-image:url('https://images.unsplash.com/photo-1526401485004-2aa7f3c23642?auto=format&fit=crop&w=1800&q=80')">
-                                    <div class="carousel__overlay"></div>
-                                    <div class="carousel__content">
-                                        <p class="carousel__tag">Ropa técnica</p>
-                                        <h2 class="carousel__title">Sin rozaduras</h2>
-                                        <p class="carousel__subtitle">Transpirable, ligera y cómoda.</p>
-                                        <a class="btn btn--primary btn--sm" href="./products.html">Comprar</a>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <div class="carousel__controls">
-                                <div class="carousel__buttons">
-                                    <button class="icon-btn" type="button" data-carousel-prev
-                                        aria-label="Anterior">←</button>
-                                    <button class="icon-btn" type="button" data-carousel-next
-                                        aria-label="Siguiente">→</button>
-                                </div>
-
-                                <div class="carousel__dots" aria-label="Indicadores">
-                                    <button class="carousel__dot carousel__dot--active" type="button" data-carousel-dot
-                                        aria-label="Slide 1"></button>
-                                    <button class="carousel__dot" type="button" data-carousel-dot
-                                        aria-label="Slide 2"></button>
-                                    <button class="carousel__dot" type="button" data-carousel-dot
-                                        aria-label="Slide 3"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="section">
-                    <div class="section__head">
-                        <div>
-                            <h2 class="section__title">Recomendados</h2>
-                            <p class="section__hint">Una tienda real tiene selección destacada. Aquí también.</p>
-                        </div>
-                        <a class="btn btn--ghost" href="./products.html">Ver todos</a>
-                    </div>
-
-                    <!-- Reutilizo el grid de productos (mismo render) -->
-                    <div class="grid grid--products" data-products-grid data-limit="6"></div>
-                </section>
-
+                <div class="carousel__dots" aria-label="Indicadores">
+                  <button class="carousel__dot carousel__dot--active" type="button" data-carousel-dot aria-label="Slide 1"></button>
+                  <button class="carousel__dot" type="button" data-carousel-dot aria-label="Slide 2"></button>
+                  <button class="carousel__dot" type="button" data-carousel-dot aria-label="Slide 3"></button>
+                </div>
+              </div>
             </div>
-        </main>
+          </div>
+        </section>
 
-        <footer class="footer">
-            <div class="footer__inner">
-                <span>© 2026 AtletismoShop</span>
-                <span class="footer__muted">DIW · SCSS (parciales) · BEM · Grid · Responsive</span>
+        <section class="section">
+          <div class="section__head">
+            <div>
+              <h2 class="section__title">Recomendados</h2>
+              <p class="section__hint">Selección destacada como en una tienda real.</p>
             </div>
-        </footer>
-    </div>
+            <a class="btn btn--ghost" href="./products.html">Ver todos</a>
+          </div>
 
-    <script type="module" src="./src/js/main.js"></script>
+          <div class="grid grid--products" data-products-grid data-limit="6"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <span>© 2026 AtletismoShop</span>
+        <span class="footer__muted">Running store</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" data-toast aria-live="polite"></div>
+
+  <script type="module" src="./src/js/main.js"></script>
 </body>
-
 </html>

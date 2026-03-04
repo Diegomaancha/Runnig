@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <input class="theme-toggle__checkbox" type="checkbox" id="theme" aria-label="Cambiar tema" />
 
     <div class="page">
         <header class="header">
@@ -36,6 +35,10 @@
                             <span class="theme-toggle__label">Tema</span>
                         </span>
                     </label>
+                      <!-- Botón tema (persistente) -->
+          <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambiar tema">
+            Tema
+          </button>
                 </nav>
             </div>
         </header>
@@ -101,7 +104,7 @@
             </div>
         </footer>
     </div>
-
+<span class="nav__link" style="padding:10px 12px;">❤ <span class="badge" data-fav-badge>0</span></span>
     <script type="module" src="./src/js/main.js"></script>
 </body>
 
