@@ -1,0 +1,71 @@
+:root {
+    --bg: #070a12;
+    --bg2: #0b1226;
+
+    --surface: rgba(255, 255, 255, 0.06);
+    --surface-2: rgba(255, 255, 255, 0.09);
+    --stroke: rgba(255, 255, 255, 0.12);
+
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.72);
+    --muted-2: rgba(255, 255, 255, 0.58);
+
+    --accent: #39b6ff;
+    --accent-2: #7c4dff;
+
+    --ok: #33d17a;
+    --warn: #ffcc00;
+    --danger: #ff5c7a;
+
+    --radius: 18px;
+    --radius-lg: 26px;
+
+    --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
+    --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.35);
+
+    --container: 1160px;
+    --header-h: 74px;
+
+    --gap-1: 10px;
+    --gap-2: 14px;
+    --gap-3: 18px;
+    --gap-4: 26px;
+
+    --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Modo claro automático (preferencia del sistema) */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f7f8fb;
+        --bg2: #eef1f8;
+
+        --surface: rgba(0, 0, 0, 0.04);
+        --surface-2: rgba(0, 0, 0, 0.07);
+        --stroke: rgba(0, 0, 0, 0.12);
+
+        --text: rgba(0, 0, 0, 0.86);
+        --muted: rgba(0, 0, 0, 0.62);
+        --muted-2: rgba(0, 0, 0, 0.52);
+
+        --shadow: 0 18px 55px rgba(0, 0, 0, 0.12);
+        --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.10);
+    }
+}
+
+/* Toggle SOLO CSS: el checkbox fuerza modo oscuro aunque el sistema sea claro */
+.theme-toggle__checkbox:checked~.page {
+    --bg: #070a12;
+    --bg2: #0b1226;
+
+    --surface: rgba(255, 255, 255, 0.06);
+    --surface-2: rgba(255, 255, 255, 0.09);
+    --stroke: rgba(255, 255, 255, 0.12);
+
+    --text: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.72);
+    --muted-2: rgba(255, 255, 255, 0.58);
+
+    --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
+    --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.35);
+}

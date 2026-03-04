@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Contacto e información del proyecto." />
+    <title>Contacto · AtletismoShop</title>
+</head>
+
+<body>
+    <input class="theme-toggle__checkbox" type="checkbox" id="theme" aria-label="Cambiar tema" />
+
+    <div class="page">
+        <header class="header">
+            <div class="header__inner">
+                <a class="brand" href="./index.html" aria-label="Ir a inicio">
+                    <span class="brand__mark" aria-hidden="true"></span>
+                    <span class="brand__text">
+                        <span class="brand__name">AtletismoShop</span>
+                        <span class="brand__tag">Contacto</span>
+                    </span>
+                </a>
+
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="./index.html">Inicio</a>
+                    <a class="nav__link" href="./products.html">Productos</a>
+                    <a class="nav__link" href="./cart.html">
+                        Carrito <span class="badge" data-cart-badge>0</span>
+                    </a>
+                    <a class="nav__link nav__link--active" href="./contact.html">Contacto</a>
+
+                    <label class="theme-toggle" for="theme">
+                        <span class="theme-toggle__btn">
+                            <span class="theme-toggle__dot" aria-hidden="true"></span>
+                            <span class="theme-toggle__label">Tema</span>
+                        </span>
+                    </label>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="main__inner">
+                <div class="breadcrumbs">
+                    <a class="breadcrumbs__link" href="./index.html">Inicio</a>
+                    <span class="breadcrumbs__sep">›</span>
+                    <span class="breadcrumbs__current">Contacto</span>
+                </div>
+
+                <section class="section">
+                    <div class="section__head">
+                        <div>
+                            <h1 class="section__title">Contacto / Información</h1>
+                            <p class="section__hint">Página obligatoria: justifica decisiones de maquetación y diseño.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h2 class="info-card__title">Qué demuestra este proyecto</h2>
+                        <ul class="info-card__list">
+                            <li class="info-card__item"><strong>HTML semántico</strong> y estructura clara.</li>
+                            <li class="info-card__item"><strong>SCSS</strong> organizado por parciales.</li>
+                            <li class="info-card__item"><strong>Metodología BEM</strong> estricta y escalable.</li>
+                            <li class="info-card__item"><strong>CSS Grid</strong> para layout y cards.</li>
+                            <li class="info-card__item"><strong>Responsive</strong> real (desktop/tablet/móvil).</li>
+                            <li class="info-card__item"><strong>Modo oscuro</strong> solo con CSS (sin JS).</li>
+                            <li class="info-card__item"><strong>Carrusel funcional</strong> y carrito persistente.</li>
+                        </ul>
+                    </div>
+
+                    <form class="form" data-contact-form aria-label="Formulario de contacto">
+                        <div class="form__row">
+                            <div class="form__field">
+                                <label class="form__label" for="name">Nombre</label>
+                                <input class="input" id="name" name="name" type="text" placeholder="Tu nombre"
+                                    required />
+                            </div>
+
+                            <div class="form__field">
+                                <label class="form__label" for="email">Email</label>
+                                <input class="input" id="email" name="email" type="email"
+                                    placeholder="tucorreo@email.com" required />
+                            </div>
+                        </div>
+
+                        <div class="form__field">
+                            <label class="form__label" for="msg">Mensaje</label>
+                            <textarea class="input textarea" id="msg" name="msg" placeholder="¿Qué necesitas?"
+                                required></textarea>
+                        </div>
+
+                        <button class="btn btn--primary" type="submit">Enviar (simulado)</button>
+                        <p class="form__note">* No se envía a servidor. Se simula para la interfaz.</p>
+                    </form>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <span>© 2026 AtletismoShop</span>
+                <span class="footer__muted">Contacto</span>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

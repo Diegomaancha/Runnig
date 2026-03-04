@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Detalle del producto." />
+    <title>Detalle · AtletismoShop</title>
+</head>
+
+<body>
+    <input class="theme-toggle__checkbox" type="checkbox" id="theme" aria-label="Cambiar tema" />
+
+    <div class="page">
+        <header class="header">
+            <div class="header__inner">
+                <a class="brand" href="./index.html" aria-label="Ir a inicio">
+                    <span class="brand__mark" aria-hidden="true"></span>
+                    <span class="brand__text">
+                        <span class="brand__name">AtletismoShop</span>
+                        <span class="brand__tag">Detalle</span>
+                    </span>
+                </a>
+
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="./index.html">Inicio</a>
+                    <a class="nav__link" href="./products.html">Productos</a>
+                    <a class="nav__link" href="./cart.html">
+                        Carrito <span class="badge" data-cart-badge>0</span>
+                    </a>
+                    <a class="nav__link" href="./contact.html">Contacto</a>
+
+                    <label class="theme-toggle" for="theme">
+                        <span class="theme-toggle__btn">
+                            <span class="theme-toggle__dot" aria-hidden="true"></span>
+                            <span class="theme-toggle__label">Tema</span>
+                        </span>
+                    </label>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="main__inner">
+                <div data-product></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <span>© 2026 AtletismoShop</span>
+                <span class="footer__muted">Ficha de producto</span>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

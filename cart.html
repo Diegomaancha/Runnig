@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Carrito visual simulado." />
+    <title>Carrito · AtletismoShop</title>
+</head>
+
+<body>
+    <input class="theme-toggle__checkbox" type="checkbox" id="theme" aria-label="Cambiar tema" />
+
+    <div class="page">
+        <header class="header">
+            <div class="header__inner">
+                <a class="brand" href="./index.html" aria-label="Ir a inicio">
+                    <span class="brand__mark" aria-hidden="true"></span>
+                    <span class="brand__text">
+                        <span class="brand__name">AtletismoShop</span>
+                        <span class="brand__tag">Carrito</span>
+                    </span>
+                </a>
+
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="./index.html">Inicio</a>
+                    <a class="nav__link" href="./products.html">Productos</a>
+                    <a class="nav__link nav__link--active" href="./cart.html">
+                        Carrito <span class="badge" data-cart-badge>0</span>
+                    </a>
+                    <a class="nav__link" href="./contact.html">Contacto</a>
+
+                    <label class="theme-toggle" for="theme">
+                        <span class="theme-toggle__btn">
+                            <span class="theme-toggle__dot" aria-hidden="true"></span>
+                            <span class="theme-toggle__label">Tema</span>
+                        </span>
+                    </label>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="main__inner">
+                <div class="breadcrumbs">
+                    <a class="breadcrumbs__link" href="./index.html">Inicio</a>
+                    <span class="breadcrumbs__sep">›</span>
+                    <span class="breadcrumbs__current">Carrito</span>
+                </div>
+
+                <section class="section">
+                    <div class="section__head">
+                        <div>
+                            <h1 class="section__title">Carrito (visual)</h1>
+                            <p class="section__hint">Persistente con localStorage: cantidades, total, eliminar y vaciar.
+                            </p>
+                        </div>
+                        <a class="btn btn--ghost" href="./products.html">Seguir comprando</a>
+                    </div>
+
+                    <div class="cart" data-cart>
+                        <div class="cart__list" data-cart-list></div>
+
+                        <aside class="cart__summary">
+                            <div class="cart__summary-head">
+                                <h2 class="cart__summary-title">Resumen</h2>
+                                <p class="cart__summary-hint">No hay pago real. Solo interfaz.</p>
+                            </div>
+
+                            <div class="cart__totals">
+                                <div class="cart__row">
+                                    <span>Subtotal</span>
+                                    <span data-cart-subtotal>0,00 €</span>
+                                </div>
+                                <div class="cart__row">
+                                    <span>Envío</span>
+                                    <span data-cart-shipping>Gratis</span>
+                                </div>
+                                <div class="cart__row cart__row--total">
+                                    <span>Total</span>
+                                    <span data-cart-total>0,00 €</span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn--primary" type="button" data-cart-checkout>Simular compra</button>
+                            <button class="btn btn--danger" type="button" data-cart-clear>Vaciar carrito</button>
+
+                            <p class="cart__legal">
+                                * Carrito simulado para demostrar UI/UX y manipulación de estado en el navegador.
+                            </p>
+                        </aside>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <span>© 2026 AtletismoShop</span>
+                <span class="footer__muted">Carrito visual</span>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

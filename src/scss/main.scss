@@ -1,0 +1,11 @@
+/* src/scss/main.scss
+   Punto de entrada del SCSS.
+   Aquí SOLO se importan los parciales (arquitectura escalable + BEM). */
+
+@use "partials/variables";
+@use "partials/mixins";
+@use "partials/base";
+@use "partials/layout";
+@use "partials/components";
+@use "partials/pages";
+@use "partials/utilities";
