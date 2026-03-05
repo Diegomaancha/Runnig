@@ -1,5 +1,4 @@
 :root {
-  /* Light base */
   --bg: #f6f7fb;
   --bg2: #eef1f8;
 
@@ -11,7 +10,6 @@
   --muted: rgba(10, 20, 40, 0.66);
   --muted-2: rgba(10, 20, 40, 0.52);
 
-  /* Brand */
   --accent: #1b63ff;
   --accent-2: #18b37c;
   --danger: #ff3b5c;
@@ -34,7 +32,6 @@
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* System dark (persistente por sistema) */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #070a12;
@@ -53,7 +50,6 @@
   }
 }
 
-/* Manual theme (persistente por localStorage) */
 html[data-theme="light"] {
   --bg: #f6f7fb;
   --bg2: #eef1f8;
@@ -89,14 +85,12 @@ html[data-theme="dark"] {
    MODO OSCURO SOLO CSS
 ================================ */
 
-/* checkbox oculto */
 .theme-toggle__checkbox {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-/* cuando el checkbox está activado */
 html:has(#theme-toggle:checked) {
 
   --bg: #070a12;
