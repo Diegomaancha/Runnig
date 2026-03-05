@@ -6,7 +6,7 @@ export const products = [
     price: 129.99,
     category: "ropa",
     badge: "Top ventas",
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1600&q=80",
+    img: "../Images/zapas.jpg",
     specs: {
       Drop: "8 mm",
       Peso: "248 g",

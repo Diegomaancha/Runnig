@@ -7,6 +7,9 @@
   <meta name="description"
     content="E-commerce de artículos de atletismo: catálogo, detalle, carrito visual y contacto." />
   <title>AtletismoShop · Running store</title>
+
+  <!-- ✅ Cargar estilos ANTES de pintar el body (evita FOUC) -->
+  <link rel="stylesheet" href="/src/scss/main.scss">
 </head>
 
 <body>
@@ -71,7 +74,7 @@
             <div class="carousel" data-carousel aria-label="Carrusel promocional">
               <div class="carousel__track" data-carousel-track>
                 <article class="carousel__slide" data-carousel-slide
-                  style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1800&q=80')">
+                  style="background-image:url('../Images/zapas.jpg')">
                   <div class="carousel__overlay"></div>
                   <div class="carousel__content">
                     <p class="carousel__tag">Zapatillas</p>
