@@ -22,30 +22,42 @@ export const initCartPage = () => {
   const clearBtn = document.querySelector("[data-cart-clear]");
   const checkoutBtn = document.querySelector("[data-cart-checkout]");
 
+  const renderEmpty = () => {
+    list.innerHTML = `
+      <div class="panel">
+        <h2 class="panel__title">Tu carrito está vacío</h2>
+        <p class="panel__text">Añade productos desde el catálogo.</p>
+        <div class="panel__actions">
+          <a class="btn btn--primary" href="./products.html">Ir a productos</a>
+        </div>
+      </div>
+    `;
+    if (subtotalEl) subtotalEl.textContent = formatEUR(0);
+    if (totalEl) totalEl.textContent = formatEUR(0);
+    if (shippingEl) shippingEl.textContent = "—";
+    hydrateCartUI();
+  };
+
   const render = () => {
     const cart = readCart();
 
-    if (!cart.length) {
-      list.innerHTML = `
-        <div class="panel">
-          <h2 class="panel__title">Tu carrito está vacío</h2>
-          <p class="panel__text">Añade productos desde el catálogo.</p>
-          <div class="panel__actions">
-            <a class="btn btn--primary" href="./products.html">Ir a productos</a>
-          </div>
-        </div>
-      `;
-      subtotalEl.textContent = formatEUR(0);
-      totalEl.textContent = formatEUR(0);
-      if (shippingEl) shippingEl.textContent = "—";
-      hydrateCartUI();
+    // Filtramos items que no existan en el catálogo (por si quedaba basura vieja)
+    const valid = cart.filter((i) => !!getProductById(i.productId));
+
+    // Si había basura, la limpiamos
+    if (valid.length !== cart.length) {
+      // reescribimos dejando solo válidos
+      localStorage.setItem("cart", JSON.stringify(valid));
+    }
+
+    if (!valid.length) {
+      renderEmpty();
       return;
     }
 
-    list.innerHTML = cart
+    list.innerHTML = valid
       .map((i) => {
         const p = getProductById(i.productId);
-        if (!p) return "";
 
         return `
           <article class="cart-item">
@@ -59,8 +71,19 @@ export const initCartPage = () => {
 
               <div class="cart-item__controls">
                 <label class="visually-hidden" for="qty-${p.id}">Cantidad</label>
-                <input class="input cart-item__qty" id="qty-${p.id}" type="number" min="1" max="99" value="${i.qty}" data-qty="${p.id}">
-                <button class="btn btn--danger" type="button" data-remove="${p.id}">Eliminar</button>
+                <input class="input cart-item__qty"
+                  id="qty-${p.id}"
+                  type="number"
+                  min="1"
+                  max="99"
+                  value="${i.qty}"
+                  data-qty="${p.id}">
+
+                <button class="btn btn--danger"
+                  type="button"
+                  data-remove="${p.id}">
+                  Eliminar
+                </button>
               </div>
             </div>
 
@@ -74,15 +97,16 @@ export const initCartPage = () => {
     const shipping = subtotal >= 60 ? 0 : 4.99;
     const total = subtotal + shipping;
 
-    subtotalEl.textContent = formatEUR(subtotal);
-    totalEl.textContent = formatEUR(total);
+    if (subtotalEl) subtotalEl.textContent = formatEUR(subtotal);
+    if (totalEl) totalEl.textContent = formatEUR(total);
     if (shippingEl) shippingEl.textContent = shipping === 0 ? "Gratis" : formatEUR(shipping);
 
     hydrateCartUI();
 
     list.querySelectorAll("[data-remove]").forEach((b) => {
       b.addEventListener("click", () => {
-        removeFromCart(b.getAttribute("data-remove"));
+        const id = b.getAttribute("data-remove");
+        removeFromCart(id);
         toast("Producto eliminado");
         render();
       });
@@ -90,7 +114,8 @@ export const initCartPage = () => {
 
     list.querySelectorAll("[data-qty]").forEach((inp) => {
       inp.addEventListener("change", () => {
-        setQty(inp.getAttribute("data-qty"), inp.value);
+        const id = inp.getAttribute("data-qty");
+        setQty(id, inp.value);
         toast("Cantidad actualizada");
         render();
       });

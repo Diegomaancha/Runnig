@@ -309,3 +309,26 @@
   .product-card { grid-column: span 12; }
   .kpis { grid-template-columns: 1fr; }
 }
+/* ===============================
+   BOTÓN MODO OSCURO
+================================ */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+}
+
+.theme-toggle label {
+  border: 1px solid var(--stroke);
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: 130ms ease;
+    -webkit-user-select: none;
+  user-select: none;
+}
+
+.theme-toggle label:hover {
+  background: var(--surface-2);
+}

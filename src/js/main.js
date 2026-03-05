@@ -1,6 +1,5 @@
 import "../scss/main.scss";
 
-import { initTheme } from "./modules/theme.js";
 import { initToast } from "./modules/toast.js";
 import { hydrateCartUI } from "./modules/cart.js";
 import { hydrateFavUI } from "./modules/favorites.js";
@@ -12,7 +11,10 @@ import { initCartPage } from "./modules/cart-page.js";
 import { initContactPage } from "./modules/contact-page.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  initTheme();
+
+  // ❗ Modo oscuro SOLO CSS
+  // se controla con checkbox + :has() en SCSS
+
   initToast();
 
   hydrateCartUI();

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -14,19 +15,37 @@
         <a class="brand" href="./index.html" aria-label="Ir a inicio">
           <span class="brand__mark" aria-hidden="true"></span>
           <span class="brand__text">
-            <span class="brand__name">AtletismoShop</span>
-            <span class="brand__tag">Soporte</span>
+           
           </span>
         </a>
+        <nav class="nav container">
 
-        <nav class="nav" aria-label="Navegación principal">
-          <a class="nav__link" href="./index.html">Inicio</a>
-          <a class="nav__link" href="./products.html">Productos</a>
-          <a class="nav__link" href="./cart.html">Carrito <span class="badge" data-cart-badge>0</span></a>
-          <span class="nav__link" style="padding:10px 12px;">❤ <span class="badge" data-fav-badge>0</span></span>
-          <a class="nav__link nav__link--active" href="./contact.html">Contacto</a>
-          <button class="theme-btn" type="button" data-theme-toggle aria-label="Cambiar tema">Tema</button>
-        </nav>
+      <div class="nav__brand">
+  <img class="logo" src="./Images/images.png" alt="AtletismoShop logo">
+  <strong>AtletismoShop</strong>
+</div>
+
+  <div class="nav__menu">
+    <a class="nav__link" href="index.html">Inicio</a>
+    <a class="nav__link" href="products.html">Productos</a>
+    <a class="nav__link" href="contact.html">Contacto</a>
+  </div>
+
+  <div class="nav__actions">
+
+    <a class="cart-btn" href="cart.html">
+      Carrito <span class="badge">0</span>
+    </a>
+
+    <div class="theme-toggle">
+      <input class="theme-toggle__checkbox" type="checkbox" id="theme-toggle">
+      <label for="theme-toggle">Tema</label>
+    </div>
+
+  </div>
+
+</nav>
+
       </div>
     </header>
 
@@ -61,7 +80,8 @@
 
             <div class="form__field">
               <label class="form__label" for="msg">Mensaje</label>
-              <textarea class="input textarea" id="msg" name="msg" placeholder="¿Qué te gustaría mejorar?" required></textarea>
+              <textarea class="input textarea" id="msg" name="msg" placeholder="¿Qué te gustaría mejorar?"
+                required></textarea>
             </div>
 
             <button class="btn btn--primary" type="submit">Enviar</button>
@@ -78,16 +98,76 @@
       </div>
     </main>
 
-    <footer class="footer">
-      <div class="footer__inner">
-        <span>© 2026 AtletismoShop</span>
-        <span class="footer__muted">Soporte</span>
-      </div>
-    </footer>
+    
   </div>
 
   <div class="toast" data-toast aria-live="polite"></div>
 
   <script type="module" src="./src/js/main.js"></script>
+
+  <footer class="footer">
+
+<div class="footer__inner">
+
+<div class="footer__col">
+
+<h3 class="footer__title">AtletismoShop</h3>
+
+<p class="footer__text">
+Running · Ropa · Tecnología
+</p>
+
+<div class="footer__social">
+
+<a href="#" class="footer__icon">📷</a>
+<a href="#" class="footer__icon">🐦</a>
+<a href="#" class="footer__icon">📘</a>
+<a href="#" class="footer__icon">▶</a>
+
+</div>
+
+</div>
+
+<div class="footer__col">
+
+<h3 class="footer__title">Tienda</h3>
+
+<a href="products.html" class="footer__link">Productos</a>
+<a href="cart.html" class="footer__link">Carrito</a>
+<a href="contact.html" class="footer__link">Contacto</a>
+
+</div>
+
+<div class="footer__col">
+
+<h3 class="footer__title">Categorías</h3>
+
+<a href="#" class="footer__link">Zapatillas</a>
+<a href="#" class="footer__link">Ropa</a>
+<a href="#" class="footer__link">Tecnología</a>
+
+</div>
+
+<div class="footer__col">
+
+<h3 class="footer__title">Información</h3>
+
+<a href="#" class="footer__link">Sobre nosotros</a>
+<a href="#" class="footer__link">Privacidad</a>
+<a href="#" class="footer__link">Términos</a>
+
+</div>
+
+</div>
+
+<div class="footer__bottom">
+
+© 2026 AtletismoShop · Todos los derechos reservados
+
+</div>
+
+</footer>
+
 </body>
+
 </html>

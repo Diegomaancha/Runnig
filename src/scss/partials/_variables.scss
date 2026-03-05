@@ -85,3 +85,31 @@ html[data-theme="dark"] {
   --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
   --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.35);
 }
+/* ===============================
+   MODO OSCURO SOLO CSS
+================================ */
+
+/* checkbox oculto */
+.theme-toggle__checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* cuando el checkbox está activado */
+html:has(#theme-toggle:checked) {
+
+  --bg: #070a12;
+  --bg2: #0b1226;
+
+  --surface: rgba(255,255,255,.06);
+  --surface-2: rgba(255,255,255,.09);
+  --stroke: rgba(255,255,255,.12);
+
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --muted-2: rgba(255,255,255,.58);
+
+  --shadow: 0 18px 55px rgba(0,0,0,.55);
+  --shadow-soft: 0 10px 35px rgba(0,0,0,.35);
+}
